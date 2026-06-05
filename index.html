@@ -87,8 +87,23 @@
   .addon-price{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--pink)}
   .addon-duration{font-size:11px;color:var(--muted);margin-top:2px}
   .policy-section{background:var(--bg2);border-top:1px solid rgba(255,77,141,0.08);border-bottom:1px solid rgba(255,77,141,0.08)}
-  .policy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:960px;margin:0 auto}
-  .policy-card{border:1px solid rgba(255,77,141,0.1);padding:28px 24px;background:var(--bg);position:relative;overflow:hidden}
+.policy-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  max-width:960px;
+  margin:0 auto;
+  align-items:stretch;
+}
+
+.policy-card{
+  border:1px solid rgba(255,77,141,0.1);
+  padding:28px 24px;
+  background:var(--bg);
+  position:relative;
+  overflow:hidden;
+  height:100%;
+}  .policy-card{border:1px solid rgba(255,77,141,0.1);padding:28px 24px;background:var(--bg);position:relative;overflow:hidden}
   .policy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--pink),transparent)}
   .policy-icon{font-size:24px;margin-bottom:16px;display:block}
   .policy-card h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:12px;font-weight:500}
@@ -117,6 +132,11 @@
   .ig-link:hover{text-decoration:underline}
   @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
   @keyframes scrollLine{0%,100%{opacity:1}50%{opacity:.3}}
+  @media(max-width:900px){
+  .policy-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
   @media(max-width:640px){
     nav{padding:16px 20px}
     .nav-links{display:none}
@@ -127,6 +147,7 @@
     .addons-grid{margin:0 16px 16px}
     .gallery-grid{grid-template-columns:repeat(2,1fr)}
     .deposit-divider{display:none}
+      .policy-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
