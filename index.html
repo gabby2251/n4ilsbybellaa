@@ -9,7 +9,7 @@
   :root { --pink:#ff4d8d; --pink-light:#ff80b0; --gold:#c8a96e; --bg:#080808; --bg2:#0f0f0f; --text:#f0eae8; --muted:#9a8f8a; }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
+  body{background:var(--bg);color:var(--text);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden;padding-bottom:48px}
   body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.5}
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(8,8,8,0.92),transparent);backdrop-filter:blur(4px)}
   .nav-logo{font-family:'Great Vibes',cursive;font-size:28px;color:var(--text);text-decoration:none}
@@ -87,23 +87,8 @@
   .addon-price{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--pink)}
   .addon-duration{font-size:11px;color:var(--muted);margin-top:2px}
   .policy-section{background:var(--bg2);border-top:1px solid rgba(255,77,141,0.08);border-bottom:1px solid rgba(255,77,141,0.08)}
-.policy-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  max-width:960px;
-  margin:0 auto;
-  align-items:stretch;
-}
-
-.policy-card{
-  border:1px solid rgba(255,77,141,0.1);
-  padding:28px 24px;
-  background:var(--bg);
-  position:relative;
-  overflow:hidden;
-  height:100%;
-}  .policy-card{border:1px solid rgba(255,77,141,0.1);padding:28px 24px;background:var(--bg);position:relative;overflow:hidden}
+  .policy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:960px;margin:0 auto}
+  .policy-card{border:1px solid rgba(255,77,141,0.1);padding:28px 24px;background:var(--bg);position:relative;overflow:hidden}
   .policy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--pink),transparent)}
   .policy-icon{font-size:24px;margin-bottom:16px;display:block}
   .policy-card h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:12px;font-weight:500}
@@ -132,11 +117,6 @@
   .ig-link:hover{text-decoration:underline}
   @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
   @keyframes scrollLine{0%,100%{opacity:1}50%{opacity:.3}}
-  @media(max-width:900px){
-  .policy-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
   @media(max-width:640px){
     nav{padding:16px 20px}
     .nav-links{display:none}
@@ -147,11 +127,36 @@
     .addons-grid{margin:0 16px 16px}
     .gallery-grid{grid-template-columns:repeat(2,1fr)}
     .deposit-divider{display:none}
-      .policy-grid{grid-template-columns:1fr;}
   }
+  .banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#b5005a,#ff4d8d,#b5005a);padding:10px 24px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 24px rgba(255,77,141,0.4);}
+  .banner span{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff;font-weight:500;}
+  .banner a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,0.5);padding:5px 16px;white-space:nowrap;transition:background .2s;}
+  .banner a:hover{background:rgba(255,255,255,0.2);}
+  .faq-list{max-width:720px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid rgba(255,77,141,0.08);}
+  .faq-item:first-child{border-top:1px solid rgba(255,77,141,0.08);}
+  .faq-q{width:100%;background:none;border:none;text-align:left;padding:20px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px;}
+  .faq-q-text{font-size:13px;font-weight:500;color:var(--text);letter-spacing:.5px;font-family:'Montserrat',sans-serif;}
+  .faq-icon{color:var(--pink);font-size:20px;flex-shrink:0;transition:transform .3s;line-height:1;}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .faq-a p{font-size:13px;color:var(--muted);line-height:1.8;padding-bottom:20px;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-item.open .faq-a{max-height:300px;}
+  .location-box{max-width:800px;margin:0 auto;border:1px solid rgba(255,77,141,0.12);background:var(--bg2);padding:32px;display:flex;gap:24px;align-items:flex-start;}
+  .location-icon{font-size:28px;flex-shrink:0;margin-top:2px;}
+  .location-box h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:12px;font-weight:500;}
+  .location-box p{font-size:13px;color:var(--muted);line-height:1.8;}
+  .location-box strong{color:var(--text);font-weight:400;}
+  @media(max-width:640px){.banner{gap:10px;flex-wrap:wrap;padding:10px 16px;}.location-box{flex-direction:column;gap:12px;padding:24px 20px;}}
 </style>
 </head>
 <body>
+
+<!-- BOOKING BANNER -->
+<div class="banner">
+  <span>🩷 Now Prebooking for June</span>
+  <a href="https://junebookings.as.me/schedule/d9d82fd6" target="_blank">Book Now &rarr;</a>
+</div>
 
 <nav>
   <a href="#" class="nav-logo">n4ilsbybellaa</a>
@@ -195,6 +200,8 @@
   </div>
   <p style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:24px;">See more on Instagram &nbsp;·&nbsp; <a href="https://instagram.com/n4ilsbybellaa" target="_blank" class="ig-link">@n4ilsbybellaa</a></p>
 </section>
+
+
 
 <section id="contact">
   <p class="section-label">Find Me</p>
@@ -367,6 +374,100 @@
     <div class="how-step"><p class="how-step-num">4</p><h4>DM Ur Inspo</h4><p>Send nail inspo to <a href="https://instagram.com/n4ilsbybellaa" target="_blank" class="ig-link">@n4ilsbybellaa</a> on Instagram</p></div>
   </div>
 </section>
+
+
+<!-- LOCATION -->
+<section id="location">
+  <p class="section-label">Where To Find Me</p>
+  <h2 class="section-title">Location</h2>
+  <div class="location-box">
+    <span class="location-icon">📍</span>
+    <div>
+      <h4>Home Studio &nbsp;·&nbsp; Fort Worth, TX</h4>
+      <p>I work out of my home studio in Fort Worth, TX. <strong>The exact address is sent via text the day before ur appointment</strong> — please do not ask other people for my address. Make sure ur phone number is correct when booking so you receive the confirmation text. No reply to the confirmation = appointment cancelled.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--bg2);border-top:1px solid rgba(255,77,141,0.08);border-bottom:1px solid rgba(255,77,141,0.08);">
+  <p class="section-label">Got Questions?</p>
+  <h2 class="section-title">FAQ</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How do I send my deposit?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Send ur $10 non-refundable deposit to <strong>Cash App ($iibarra0)</strong> or <strong>Apple Pay (682-213-0442)</strong> immediately after booking. Do not add "for nails" in the note when sending — just send it as is. No deposit = ur appointment is not confirmed and will be cancelled.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">What name do I use when booking?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>In the <strong>first name box</strong>, add ur Instagram @. In the <strong>last name box</strong>, add ur first and last name. This is how I identify my clients.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Do you take walk-ins?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>No — all appointments must be booked in advance through the booking link. Walk-ins are not accepted.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">How will I get the address?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>The address will be texted to you <strong>the day before ur appointment</strong>. You must reply to confirm or ur appointment will be cancelled. Please do not ask other clients or people for my address.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">What if I need to cancel or reschedule?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Please let me know in advance if you need to cancel or reschedule. Same-day cancellations forfeit the deposit. Cancellations with advance notice are fine — just text or DM me.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">What payments do you accept?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>The $10 deposit is sent via <strong>Cash App ($iibarra0)</strong> or <strong>Apple Pay (682-213-0442)</strong>. The remaining balance on the day of is <strong>cash or Apple Pay only</strong>. No exceptions.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Can I bring someone with me?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>No extra guests are allowed. Please come alone to ur appointment.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">I'm not sure what length I want — what do I book?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Check out the gallery above to see examples of each length! You can also DM me on Instagram <strong>@n4ilsbybellaa</strong> with any questions or inspo before ur appointment and I'll help guide you.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Can I contact you by phone?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p><strong>Text or DM only</strong> — please do not call my number to book. Calling to book is disrespectful and will result in being blocked. You can reach me at 682-213-0442 via text or at @n4ilsbybellaa on Instagram.</p></div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
 
 <section class="cta-section">
   <p class="section-label">Ready?</p>
