@@ -34,9 +34,12 @@
   .section-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--pink);text-align:center;margin-bottom:16px;opacity:.8}
   .section-title{font-family:'Great Vibes',cursive;font-size:clamp(40px,8vw,72px);text-align:center;margin-bottom:56px;color:var(--text)}
   .about{background:var(--bg2);border-top:1px solid rgba(255,77,141,0.08);border-bottom:1px solid rgba(255,77,141,0.08)}
-  .about-inner{max-width:680px;margin:0 auto;text-align:center}
-  .about-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.8vw,22px);line-height:1.8;color:var(--text);margin-bottom:24px}
+  .about-inner{max-width:800px;margin:0 auto;display:flex;gap:48px;align-items:center;}
+  .about-photo{width:180px;height:220px;flex-shrink:0;object-fit:cover;border:1px solid rgba(255,77,141,0.2);filter:grayscale(20%);}
+  .about-text{text-align:left;}
+  .about-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(16px,2.4vw,20px);line-height:1.8;color:var(--text);margin-bottom:24px}
   .about-sig{font-family:'Great Vibes',cursive;font-size:36px;color:var(--pink)}
+  @media(max-width:640px){.about-inner{flex-direction:column;align-items:center;text-align:center;gap:28px}.about-photo{width:140px;height:170px}.about-text{text-align:center}}
   .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;max-width:960px;margin:0 auto}
   .gallery-item{aspect-ratio:1;background:var(--bg2);border:1px solid rgba(255,77,141,0.08);overflow:hidden}
   .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
@@ -180,8 +183,11 @@
 <section class="about">
   <p class="section-label">Hey Babe</p>
   <div class="about-inner">
-    <p class="about-quote">My name is Isabella. I am a nail tech based in Fort Worth &amp; hopefully ur soon-to-be nail tech. I've been in the nail industry for 3 years and I specialize in acrylic, gel, acrylic toes, &amp; gel toes. I am very grateful for all the girlies who choose me as their nail tech and who choose to fit me in their budget — my business wouldn't be where it's at today without the support from you.</p>
-    <p class="about-sig">— Bella xe</p>
+    <img src="bella.jpeg" alt="Bella — n4ilsbybellaa" class="about-photo">
+    <div class="about-text">
+      <p class="about-quote">My name is Isabella. I am a nail tech based in Fort Worth &amp; hopefully ur soon-to-be nail tech. I've been in the nail industry for 3 years and I specialize in acrylic, gel, acrylic toes, &amp; gel toes. I am very grateful for all the girlies who choose me as their nail tech and who choose to fit me in their budget — my business wouldn't be where it's at today without the support from you.</p>
+      <p class="about-sig">— Bella xe</p>
+    </div>
   </div>
 </section>
 
@@ -199,8 +205,6 @@
   </div>
   <p style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:24px;">See more on Instagram &nbsp;·&nbsp; <a href="https://instagram.com/n4ilsbybellaa" target="_blank" class="ig-link">@n4ilsbybellaa</a></p>
 </section>
-
-
 
 <section id="contact">
   <p class="section-label">Find Me</p>
@@ -306,11 +310,6 @@
       </div>
     </div>
 
-    <div class="service-category">
-      <div class="service-category-header"><h3>Extras</h3><div class="cat-line"></div></div>
-      <div class="service-item"><div><p class="service-name">Soak Off</p><p class="service-detail">Removal of artificial nails dissolved in pure acetone — 10–15 min soak, gently pushed off.</p></div><div class="service-price-col"><p class="service-price">$10</p><p class="service-duration">35 min</p></div></div>
-    </div>
-
   </div>
 </section>
 
@@ -374,7 +373,6 @@
   </div>
 </section>
 
-
 <!-- LOCATION -->
 <section id="location">
   <p class="section-label">Where To Find Me</p>
@@ -394,66 +392,39 @@
   <h2 class="section-title">FAQ</h2>
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">How do I send my deposit?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How do I send my deposit?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p>Send ur $10 non-refundable deposit to <strong>Cash App ($iibarra0)</strong> or <strong>Apple Pay (682-213-0442)</strong> immediately after booking. Do not add "for nails" in the note when sending — just send it as is. No deposit = ur appointment is not confirmed and will be cancelled.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">What name do I use when booking?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What name do I use when booking?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p>In the <strong>first name box</strong>, add ur Instagram @. In the <strong>last name box</strong>, add ur first and last name. This is how I identify my clients.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Do you take walk-ins?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you take walk-ins?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p>No — all appointments must be booked in advance through the booking link. Walk-ins are not accepted.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">How will I get the address?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How will I get the address?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p>The address will be texted to you <strong>the day before ur appointment</strong>. You must reply to confirm or ur appointment will be cancelled. Please do not ask other clients or people for my address.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">What if I need to cancel or reschedule?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What if I need to cancel or reschedule?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p>Please let me know in advance if you need to cancel or reschedule. Same-day cancellations forfeit the deposit. Cancellations with advance notice are fine — just text or DM me.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">What payments do you accept?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What payments do you accept?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p>The $10 deposit is sent via <strong>Cash App ($iibarra0)</strong> or <strong>Apple Pay (682-213-0442)</strong>. The remaining balance on the day of is <strong>cash or Apple Pay only</strong>. No exceptions.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Can I bring someone with me?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can I bring someone with me?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p>No extra guests are allowed. Please come alone to ur appointment.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">I'm not sure what length I want — what do I book?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">I'm not sure what length I want — what do I book?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p>Check out the gallery above to see examples of each length! You can also DM me on Instagram <strong>@n4ilsbybellaa</strong> with any questions or inspo before ur appointment and I'll help guide you.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Can I contact you by phone?</span>
-        <span class="faq-icon">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can I contact you by phone?</span><span class="faq-icon">+</span></button>
       <div class="faq-a"><p><strong>Text or DM only</strong> — please do not call my number to book. Calling to book is disrespectful and will result in being blocked. You can reach me at 682-213-0442 via text or at @n4ilsbybellaa on Instagram.</p></div>
     </div>
   </div>
