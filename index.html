@@ -89,7 +89,7 @@
   .addon-price{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--pink)}
   .addon-duration{font-size:11px;color:var(--muted);margin-top:2px}
   .policy-section{background:var(--bg2);border-top:1px solid rgba(255,77,141,0.08);border-bottom:1px solid rgba(255,77,141,0.08)}
-  .policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
+  .policy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:960px;margin:0 auto}
   .policy-card{border:1px solid rgba(255,77,141,0.1);padding:28px 24px;background:var(--bg);position:relative;overflow:hidden}
   .policy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--pink),transparent)}
   .policy-icon{font-size:24px;margin-bottom:16px;display:block}
@@ -320,7 +320,7 @@
     <div class="policy-card">
       <span class="policy-icon">💳</span>
       <h4>Payment</h4>
-      <p><strong>$10 non-refundable deposit</strong> required at booking via Cash App ($iibarra0) or Apple Pay (682-213-0442). Remaining balance on the day of is <strong>cash or Apple Pay only.</strong></p>
+      <p><strong>$10 non-refundable deposit</strong> required at booking via Cash App ($iibarra0) or Apple Pay (682-213-0442). Send it immediately after booking — remaining balance on the day of is <strong>cash or Apple Pay only.</strong></p>
     </div>
     <div class="policy-card">
       <span class="policy-icon">🙅</span>
@@ -335,7 +335,17 @@
     <div class="policy-card">
       <span class="policy-icon">❌</span>
       <h4>Cancellations</h4>
-      <p>Please let me know in advance if you need to cancel. <strong>Same-day cancellations forfeit the deposit.</strong> A confirmation text is sent the day before — no reply = cancelled.</p>
+      <p>Please let me know in advance if you need to cancel. <strong>Same-day cancellations forfeit the deposit.</strong> A confirmation is sent when you book and again the day before — no reply = cancelled.</p>
+    </div>
+    <div class="policy-card">
+      <span class="policy-icon">🔁</span>
+      <h4>No-Shows</h4>
+      <p>If you no-show and want to rebook, you'll need to <strong>pay 50% of ur set</strong> before doing so. If you'd rather not, that's totally okay — but I will not service you.</p>
+    </div>
+    <div class="policy-card">
+      <span class="policy-icon">📸</span>
+      <h4>Instagram Handle Required</h4>
+      <p>Add ur <strong>Instagram @ in the first name box</strong> when booking — this is for identification purposes. If it's missing, ur appointment will be <strong>automatically cancelled</strong> and you'll need to rebook.</p>
     </div>
     <div class="policy-card">
       <span class="policy-icon">📍</span>
@@ -347,6 +357,11 @@
       <h4>Booking Etiquette</h4>
       <p><strong>Do not call</strong> my number to book — text or DM on Instagram only. Calling to book is disrespectful and will result in being blocked.</p>
     </div>
+    <div class="policy-card">
+      <span class="policy-icon">🕒</span>
+      <h4>You're In Charge Of Showing Up</h4>
+      <p>You'll get a confirmation as soon as you book and again the day before — <strong>I'm not responsible for reminding you</strong> beyond that. Please read every policy on this page before booking; it prevents confusion for both of us.</p>
+    </div>
   </div>
 </section>
 
@@ -356,9 +371,9 @@
   <div class="checklist">
     <div class="check-item"><span class="check-num">01</span><div class="check-content"><h4>Bring Inspiration</h4><p>If you have any nail style in mind, bring photos or references. Feel free to DM me on Instagram — any questions on a nail set, just ask.</p></div></div>
     <div class="check-item"><span class="check-num">02</span><div class="check-content"><h4>Arrive Bare-Handed</h4><p>Come with bare hands unless you booked a soak off or fill. I do not work over other people's work or damaged nails.</p></div></div>
-    <div class="check-item"><span class="check-num">03</span><div class="check-content"><h4>Send Your Deposit</h4><p>Send ur $10 deposit to Cash App ($iibarra0) or Apple Pay (682-213-0442) as soon as you book. No deposit = no appointment.</p></div></div>
-    <div class="check-item"><span class="check-num">04</span><div class="check-content"><h4>Arrive On Time</h4><p>Arrive on time — sets take 2–3+ hrs so there's no room for delays. More than 10 minutes late and ur appointment is cancelled.</p></div></div>
-    <div class="check-item"><span class="check-num">05</span><div class="check-content"><h4>Confirm the Day Before</h4><p>A confirmation text with my address will be sent the day before. <strong>You must reply</strong> — no reply means ur appointment will be cancelled.</p></div></div>
+    <div class="check-item"><span class="check-num">03</span><div class="check-content"><h4>Send Your Deposit</h4><p>Send ur $10 deposit to Cash App ($iibarra0) or Apple Pay (682-213-0442) as soon as you book — don't wait for me to reach out. No deposit = no appointment.</p></div></div>
+    <div class="check-item"><span class="check-num">04</span><div class="check-content"><h4>Arrive On Time</h4><p>Arrive on time — sets take 2–3+ hrs so there's no room for delays. More than 10 minutes late and ur appointment is cancelled. I'm not in charge of reminding you to show up.</p></div></div>
+    <div class="check-item"><span class="check-num">05</span><div class="check-content"><h4>Confirm the Day Before</h4><p>A confirmation is sent as soon as you book, and again with my address the day before. <strong>You must reply</strong> — no reply means ur appointment will be cancelled.</p></div></div>
   </div>
 </section>
 
@@ -367,7 +382,7 @@
   <h2 class="section-title">How To Book</h2>
   <div class="how-steps">
     <div class="how-step"><p class="how-step-num">1</p><h4>Choose Service</h4><p>Click Book Now, select ur service and preferred time &amp; date</p></div>
-    <div class="how-step"><p class="how-step-num">2</p><h4>Your Name</h4><p>First name = ur Instagram @. Last name = ur first and last name</p></div>
+    <div class="how-step"><p class="how-step-num">2</p><h4>Your Name</h4><p>First name = ur Instagram @ (required for ID — missing it auto-cancels ur booking). Last name = ur first and last name</p></div>
     <div class="how-step"><p class="how-step-num">3</p><h4>Send Deposit</h4><p>Send ur $10 to Cash App ($iibarra0) or Apple Pay (682-213-0442) right away</p></div>
     <div class="how-step"><p class="how-step-num">4</p><h4>DM Ur Inspo</h4><p>Send nail inspo to <a href="https://instagram.com/n4ilsbybellaa" target="_blank" class="ig-link">@n4ilsbybellaa</a> on Instagram</p></div>
   </div>
@@ -397,7 +412,15 @@
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What name do I use when booking?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>In the <strong>first name box</strong>, add ur Instagram @. In the <strong>last name box</strong>, add ur first and last name. This is how I identify my clients.</p></div>
+      <div class="faq-a"><p>In the <strong>first name box</strong>, add ur Instagram @ — this is required for identification purposes. If it's missing, ur appointment will be <strong>automatically cancelled</strong> and you'll have to rebook. In the <strong>last name box</strong>, add ur first and last name.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What happens if I no-show my appointment?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>If you no-show and want to rebook, you'll need to <strong>pay 50% of ur set upfront</strong> before I schedule you again. If you'd rather not do that, that's totally okay — I just won't be able to service you going forward.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Will you remind me about my appointment?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>You'll get a confirmation as soon as you book, and another one with my address the day before. Past that, <strong>it's on you to show up on time</strong> — I'm not able to send extra reminder texts. Everything you need is listed on this website, so please read through it before booking.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you take walk-ins?</span><span class="faq-icon">+</span></button>
